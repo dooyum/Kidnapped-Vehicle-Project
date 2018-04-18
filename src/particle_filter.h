@@ -23,14 +23,10 @@ struct Particle {
 	std::vector<double> sense_y;
 };
 
-
-
 class ParticleFilter {
 	
 	// Number of particles to draw
-	int num_particles; 
-	
-	
+	int num_particles;
 	
 	// Flag, if filter is initialized
 	bool is_initialized;
@@ -78,7 +74,7 @@ public:
 	 * @param predicted Vector of predicted landmark observations
 	 * @param observations Vector of landmark observations
 	 */
-	void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
+	void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs> &observations);
 	
 	/**
 	 * updateWeights Updates the weights for each particle based on the likelihood of the 
@@ -92,8 +88,7 @@ public:
 			const Map &map_landmarks);
 	
 	/**
-	 * resample Resamples from the updated set of particles to form
-	 *   the new set of particles.
+	 * Samples from the updated set of particles to form the new set of particles.
 	 */
 	void resample();
 
